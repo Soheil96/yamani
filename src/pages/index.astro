@@ -1,0 +1,34 @@
+---
+import Timeline from '../components/Timeline.astro';
+
+const events = [
+    {
+        year: '1975',
+        title: 'Founded Company',
+        description: 'In 1975, I founded my first company, which laid the groundwork for everything that followed.',
+        image: '/images/founded-company.jpg'
+    },
+    {
+        year: '1980',
+        title: 'First Major Product Launch',
+        description: 'The first major product I launched had a significant impact on the market.',
+        image: '/images/first-product.jpg'
+    },
+    {
+        year: '1995',
+        title: 'Expansion into Global Markets',
+        description: 'By 1995, we had expanded into global markets and began to scale the business exponentially.',
+        image: '/images/global-expansion.jpg'
+    },
+    // Add more events as needed
+];
+---
+<html>
+<head>
+    <title>My Timeline</title>
+    <link rel="stylesheet" href="/styles/timeline.css">
+</head>
+<body>
+    <Timeline events={events} />
+</body>
+</html>
