@@ -1,23 +1,16 @@
 ---
-const { events } = Astro.props; // Access props correctly from Astro.props
+const { events } = Astro.props;
 ---
-
-<div class="timeline-container">
-    <!-- Central Line -->
-    <div class="timeline-line"></div>
-
-    <!-- Loop through events and display each one -->
-    {events.map((event, index) => (
-        <div class={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
-            <div class="event-content">
-                <span class="event-year">{event.year}</span>
-                <h3 class="event-title">{event.title}</h3>
-                {event.image && <img src={event.image} alt={event.title} />}
-
-                <div class="event-description">
-                    <p>{event.description}</p>
-                </div>
-            </div>
+<div class="timeline">
+  <div class="timeline__wrap">
+    <div class="timeline__items">
+      {events.map(event => (
+        <div class="timeline__item">
+          <div class="timeline__content">{event}</div>
         </div>
-    ))}
+      ))}
+    </div>
+  </div>
 </div>
+
+<script src="/scripts/timeline.js" is:inline></script>
