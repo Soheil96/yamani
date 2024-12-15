@@ -46,7 +46,7 @@
   z-index: 1;
 }
 .timeline__item.animated {
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-fill-mode: both;
   opacity: 0;
 }
@@ -318,29 +318,26 @@ body {
   background-color: #F0F0F0;
 }
 
-.timeline__item:hover .timeline__description {
+
+.timeline__content:hover .timeline__details {
   max-height: 100vh;
   opacity: 1;
   visibility: visible;
+  transition: max-height 1s ease-in, opacity 1.5s ease-in;
 }
 
-.timeline__item:hover .timeline__image {
-  max-height: 100vh;
-  opacity: 1;
-  visibility: visible;
-}
-
-.timeline__description {
+.timeline__details {
+  max-width: 34vw;
   max-height: 0;
-  overflow: hidden;
-  transition: max-height 1.5s ease, opacity 2s ease;
+  transition: max-height 0.75s ease-out, opacity 0.5s ease-out;
   opacity: 0;
 }
 
-.timeline__image {
+.timeline__content:hover .timeline__map {
+  height: 450px;
+  max-height: 450px;
+}
+
+.timeline__map {
   max-height: 0;
-  overflow: hidden;
-  transition: max-height 1.5s ease, opacity 2s ease;
-  opacity: 0;
-  width: 33vw;
 }
