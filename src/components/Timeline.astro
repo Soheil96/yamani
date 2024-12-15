@@ -1,5 +1,16 @@
 ---
-const { events } = Astro.props;
+const { events } = Astro.props as { events: Event[] };
+
+type EventDetail = {
+  description?: string;
+  image?: string;
+  map?: string;
+};
+type Event = {
+  year: string,
+  preview: string,
+  details?: EventDetail[];
+};
 ---
 <div class="container">
   <div class="timeline">
@@ -10,8 +21,27 @@ const { events } = Astro.props;
             <div class="timeline__content">
               <h2>{event.year}</h2>
               <p>{event.preview}</p>
-              <p class="timeline__description">{event.description}</p>
-              {event.image && <img class="timeline__image" src={`${import.meta.env.BASE_URL}images/` + event.image}>}
+              {event.details && event.details.map((detail, index) => (
+                <>
+                  {detail.description && <p class="timeline__details">{detail.description}</p>}
+                  {detail.image && (
+                    <img class="timeline__details"
+                      src={`${import.meta.env.BASE_URL}images/biography/${detail.image}`}
+                      alt="Detail"
+                    />
+                  )}
+                  {detail.map && (
+                    <div class="timeline__details">
+                      <iframe
+                        src={detail.map}
+                        height="450"
+                        style={{ border: 0, width: "inherit" }}
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  )}
+                </>
+              ))}
             </div>
           </div>
         ))}
