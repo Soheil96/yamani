@@ -46,7 +46,7 @@
   z-index: 1;
 }
 .timeline__item.animated {
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-fill-mode: both;
   opacity: 0;
 }
@@ -319,7 +319,7 @@ body {
 }
 
 
-.timeline__item:hover .timeline__details {
+.timeline__content:hover .timeline__details {
   max-height: 100vh;
   opacity: 1;
   visibility: visible;
@@ -327,8 +327,17 @@ body {
 }
 
 .timeline__details {
-  width: 33vw;
+  max-width: 34vw;
   max-height: 0;
-  transition: max-height 0.7s ease-out, opacity 0.7s ease-out;
+  transition: max-height 0.75s ease-out, opacity 0.5s ease-out;
   opacity: 0;
+}
+
+.timeline__content:hover .timeline__map {
+  height: 450px;
+  max-height: 450px;
+}
+
+.timeline__map {
+  max-height: 0;
 }
