@@ -10,6 +10,8 @@ const { events } = Astro.props;
             <div class="timeline__content">
               <h2>{event.year}</h2>
               <p>{event.preview}</p>
+              <p class="timeline__description">{event.description}</p>
+              {event.image && <img class="timeline__image" src={`${import.meta.env.BASE_URL}images/` + event.image}>}
             </div>
           </div>
         ))}
