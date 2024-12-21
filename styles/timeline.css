@@ -86,7 +86,7 @@
   border-radius: 10px;
   color: #333;
   display: block;
-  padding: 20px;
+  padding: 15px;
   position: relative;
 }
 .timeline__content::before, .timeline__content::after {
@@ -114,12 +114,11 @@
 .timeline__content h2 {
   font-size: 22px;
   font-weight: 700;
-  margin: 0 0 10px;
+  margin: 0 0 20px;
 }
 .timeline__content p {
   font-size: 20px;
   line-height: 1.5;
-  margin-bottom: 10px;
 }
 
 .timeline--horizontal {
@@ -331,6 +330,8 @@ body {
   max-height: 0;
   transition: max-height 0.75s ease-out, opacity 0.5s ease-out;
   opacity: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .timeline__content:hover .timeline__map {
@@ -340,4 +341,10 @@ body {
 
 .timeline__map {
   max-height: 0;
+  margin-top: 15px;
+}
+
+.timeline__preview {
+  margin-bottom: 15px;
+  margin-top: 0;
 }
