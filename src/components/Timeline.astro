@@ -5,6 +5,10 @@ type EventDetail = {
   description?: string;
   image?: string;
   map?: string;
+  reference?: {
+    link: string,
+    text: string
+  }
 };
 type Event = {
   year: string,
@@ -20,7 +24,7 @@ type Event = {
           <div class="timeline__item">
             <div class="timeline__content">
               <h2>{event.year}</h2>
-              <p>{event.preview}</p>
+              <p class="timeline__preview">{event.preview}</p>
               {event.details && event.details.map((detail, index) => (
                 <>
                   {detail.description && <p class="timeline__details">{detail.description}</p>}
@@ -39,6 +43,11 @@ type Event = {
                         loading="lazy"
                       ></iframe>
                     </div>
+                  )}
+                  {detail.reference && (
+                      <div class="timeline__details">
+                        <a href={ detail.reference.link }>{detail.reference.text}</a>
+                      </div>
                   )}
                 </>
               ))}

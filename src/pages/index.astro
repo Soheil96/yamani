@@ -7,6 +7,8 @@ const events = [
       "year": 1968,
       "preview": "Ahmad Ismail was born in Basra, in the Huwair area in a small village called al-Madina.",
       "details": [
+        {"description": "Ahmad is from the Hambush tribe."},
+        {"reference": {"text": "See more about his origin and lineage", "link": "origin"}},
         {"map": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d109494.00438524489!2d47.2445144!3d30.9512874!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fdcda36b3d02c6d%3A0x9c30a2595ee4dbfe!2sAl%20Madina%2C%20Basra%20Governorate%2C%20Iraq!5e0!3m2!1sen!2sde!4v1734291137653!5m2!1sen!2sde"},
       ]
     },
@@ -51,7 +53,7 @@ const events = [
 ---
 <link rel="stylesheet" href={`${import.meta.env.BASE_URL}styles/timeline.css`}>
 
-<BaseLayout title="Astro Timeline Project">
+<BaseLayout title="Ahmad Ismail Biography">
   <div style="flex-flow: column; width: inherit; text-align: center">
     <h1>Biography of Ahmad Ismail al-Basri</h1>
     <img src={`${import.meta.env.BASE_URL}images/biography/ahmad-ismail.png`} alt="Ahmed Ismail picture">
