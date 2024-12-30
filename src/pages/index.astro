@@ -61,14 +61,3 @@ const events = [
 
   <Timeline events={events} />
 </BaseLayout>
-
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', function () {
-    const timelineElements = document.querySelectorAll('.timeline');
-    // Call the `timeline` function defined in timeline.js
-    timeline(timelineElements, {
-      mode: 'vertical',
-      visibleItems: 3,
-    });
-  });
-</script>
