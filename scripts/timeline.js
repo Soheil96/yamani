@@ -90,10 +90,10 @@ function timeline(collection, options) {
       trigger = parseInt(trigger * ((100 - triggerValue) / 100), 10);
     }
     return (
-      rect.top <= trigger
-      && rect.left <= (window.innerWidth || document.documentElement.clientWidth)
-      && (rect.top + rect.height) >= 0
-      && (rect.left + rect.width) >= 0
+        rect.top <= trigger
+        && rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+        && (rect.top + rect.height) >= 0
+        && (rect.left + rect.width) >= 0
     );
   }
 
@@ -318,7 +318,7 @@ function timeline(collection, options) {
     const maxIndex = tl.items.length - tl.settings.visibleItems;
     const moveItems = parseInt(tl.settings.moveItems, 10);
     [].forEach.call(navArrows, (arrow) => {
-      arrow.addEventListener('click', function(e) {
+      arrow.addEventListener('click', function (e) {
         e.preventDefault();
         currentIndex = this.classList.contains('timeline-nav-button--next') ? (currentIndex += moveItems) : (currentIndex -= moveItems);
         if (currentIndex === 0 || currentIndex < 0) {
@@ -435,10 +435,19 @@ function timeline(collection, options) {
   });
 }
 
+
+document.addEventListener('DOMContentLoaded', function () {
+  const timelineElements = document.querySelectorAll('.timeline');
+  timeline(timelineElements, {
+    mode: 'vertical',
+    visibleItems: 3,
+  });
+});
+
 // Register as a jQuery plugin if the jQuery library is present
 if (window.jQuery) {
   (($) => {
-    $.fn.timeline = function(opts) {
+    $.fn.timeline = function (opts) {
       timeline(this, opts);
       return this;
     };
