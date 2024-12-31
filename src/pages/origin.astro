@@ -1,7 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import OriginPage from '../content/origin.mdx';
 ---
+<style>
+    .container {
+        padding-left: 20vw;
+        padding-right: 20vw;
+        padding-top: 10vh;
+    }
+</style>
 
 <BaseLayout title="Origin and Lineage">
-    <p style="font-size: 3rem; text-align: center">Under construction 🚧</p>
+    <div class="container">
+        <OriginPage />
+    </div>
 </BaseLayout>
