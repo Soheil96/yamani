@@ -1,5 +1,15 @@
 ---
+import LanguageNav from '../components/LanguageNav.astro';
+import { languages } from '../assets/Languages.js';
 const { title } = Astro.props;
+
+let [,root, currentLang, ...currentPathParts] = Astro.url.pathname.split('/');
+const validLangCodes = languages.map((lang) => lang.code);
+if (validLangCodes.includes(currentLang)) {
+    currentLang += '/';
+} else {
+    currentLang = '';
+}
 ---
 <link rel="stylesheet" href={`${import.meta.env.BASE_URL}styles/base.css`}>
 
@@ -10,7 +20,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-
+    <LanguageNav></LanguageNav>
     <div class="menu-container">
       <div class="menu-button">
           <div class="menu-line line1"></div>
@@ -18,8 +28,8 @@ const { title } = Astro.props;
           <div class="menu-line line3"></div>
       </div>
       <div class="menu-content">
-          <a href=`${import.meta.env.BASE_URL}`>Biography</a>
-          <a href=`${import.meta.env.BASE_URL}origin`>Origin and Lineage</a>
+          <a href=`${import.meta.env.BASE_URL}${currentLang}`>Biography</a>
+          <a href=`${import.meta.env.BASE_URL}${currentLang}origin`>Origin and Lineage</a>
       </div>
     </div>
 

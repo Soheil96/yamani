@@ -22,7 +22,7 @@ type Event = {
       <div class="timeline__items">
         {events.map(event => (
           <div class="timeline__item">
-            <div class="timeline__content">
+            <div class="timeline__content" dir="auto">
               <h2>{event.year}</h2>
               <p class="timeline__preview">{event.preview}</p>
               {event.details && event.details.map((detail, index) => (

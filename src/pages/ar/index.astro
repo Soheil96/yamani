@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Timeline from '../../components/Timeline.astro';
+
+const events = [
+    {
+      "year": 1968,
+      "preview":"أحمد إسماعيل وُلد في البصرة، في منطقة الهوير في قرية صغيرة تُسمى المدينة.",
+      "details": [
+        {"description": "أحمد ينتمي إلى قبيلة الحمبوش."},
+        {"reference": {"text": "اطّلع على المزيد حول أصوله ونسبه.", "link": "origin"}},
+        {"map": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d109494.00438524489!2d47.2445144!3d30.9512874!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fdcda36b3d02c6d%3A0x9c30a2595ee4dbfe!2sAl%20Madina%2C%20Basra%20Governorate%2C%20Iraq!5e0!3m2!1sen!2sde!4v1734291137653!5m2!1sen!2sde"},
+      ]
+    },
+    {
+      "year": 1992,
+      "preview": "أحمد حصل على شهادة هندسة في التخطيط الحضري من جامعة البصرة في العراق.",
+      "details": [
+        {"image": "university.jpg"}
+      ]
+    },
+    {"year": 1999, "preview": "التحق بالحوزة العلمية للسيد محمد الصدر.",
+      "details": []
+    },
+    {
+      "year": 2002,
+      "preview": "أعلن ادعاءه بأنه اليماني للعلن.",
+      "details": [
+        {"image": "yemeni.jpg"}
+      ]
+    },
+    {
+      "year": 2006,
+      "preview": "دخل في حالة اختفاء.",
+      "details": []
+    },
+    {
+      "year": 2008,
+      "preview": "أحمد وأتباعه شنوا تمردًا مسلحًا، وكانت نيتهم قتل الزعماء الدينيين في النجف، وخصوصًا آية الله السيستاني، الذي اعتبروه عقبة أمام ظهور الإمام الثاني عشر وعدوًا لهم.",
+      "details": []
+    },
+    {
+      "year": 2012,
+      "preview": "بعد أربع سنوات من الاختفاء، ادعى صوت على حساب فيسبوك أنه أحمد البصري.",
+      "details": []
+    },
+    {
+      "year": 2020,
+      "preview": "ثم اختفى مرة أخرى، حتى عيد الغدير 2020، عندما ألقى خطبة استمرت 17 دقيقة.",
+      "details": []
+    },
+];
+---
+<link rel="stylesheet" href={`${import.meta.env.BASE_URL}styles/timeline.css`}>
+
+<BaseLayout title="Ahmad Ismail Biography">
+  <div style="flex-flow: column; width: inherit; text-align: center">
+    <h1>سيرة أحمد إسماعيل البصري</h1>
+    <img src={`${import.meta.env.BASE_URL}images/biography/ahmad-ismail.png`} alt="Ahmed Ismail picture">
+  </div>
+
+  <Timeline events={events} />
+</BaseLayout>

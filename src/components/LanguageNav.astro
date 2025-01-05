@@ -1,0 +1,82 @@
+---
+import { languages } from '../assets/Languages.js';
+
+const [,root, currentLang, ...currentPathParts] = Astro.url.pathname.split('/');
+const validLangCodes = languages.map((lang) => lang.code);
+let currentPath = ''
+if (validLangCodes.includes(currentLang)) {
+  currentPath = currentPathParts.join('/');
+} else {
+  if (currentLang) {
+    currentPath = currentLang + '/' + currentPathParts.join('/');
+  } else {
+    currentPath = currentPathParts.join('/');
+  }
+}
+---
+<style>
+  .language-switcher {
+    padding-left: 15px;
+    padding-top: 10px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 5px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+  }
+
+  .language-switcher:hover .dropdown {
+    display: block;
+  }
+
+  .dropdown a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+
+  .dropdown a:hover {
+    background-color: #f0f0f0;
+  }
+
+  .dropdown a .flag {
+    margin-right: 10px;
+    font-size: 1.2rem;
+  }
+
+  .current-language {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    font-weight: 600;
+  }
+</style>
+
+<div class="language-switcher">
+  <div class="current-language">
+    {languages.find((lang) => lang.code === currentLang)?.label || '🇬🇧 English'}
+  </div>
+  <div class="dropdown">
+    {languages.map((lang) => (
+      <a href={`${import.meta.env.BASE_URL}${lang.path}${currentPath}`} key={lang.code}>
+        <span class="flag">{lang.label.split(' ')[0]}</span>
+        <span>{lang.label.split(' ')[1]}</span>
+      </a>
+    ))}
+  </div>
+</div>
