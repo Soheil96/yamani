@@ -1,0 +1,6 @@
+---
+const baseURL = import.meta.env.BASE_URL;
+const src = Astro.props.src;
+---
+
+<img src={`${baseURL}${src}`} alt={Astro.props.alt} width={Astro.props.width} />

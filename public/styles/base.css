@@ -3,3 +3,43 @@ body {
     background-color: #F0F0F0;
     font-family: Arial, sans-serif;
 }
+
+.hadith {
+  font-family: 'Georgia', serif;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 60vw;
+  margin: 20px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.hadith .text {
+  font-size: 1.4em;
+  color: #333;
+  line-height: 1.8;
+  text-align: right;
+  margin-bottom: 15px;
+  direction: rtl;
+}
+.hadith .translation {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.6;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 15px;
+  direction: ltr;
+}
+.hadith .owner {
+  font-size: 1em;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.hadith .reference {
+  font-size: 0.9em;
+  color: #888;
+  text-align: center;
+}

@@ -54,10 +54,29 @@ const events = [
 <link rel="stylesheet" href={`${import.meta.env.BASE_URL}styles/timeline.css`}>
 
 <BaseLayout title="Ahmad Ismail Biography">
-  <div style="flex-flow: column; width: inherit; text-align: center">
-    <h1>Biography of Ahmad Ismail al-Basri</h1>
-    <img src={`${import.meta.env.BASE_URL}images/biography/ahmad-ismail.png`} alt="Ahmed Ismail picture">
-  </div>
+    <div style="flex-flow: column; width: inherit; text-align: center">
+        <img src={`${import.meta.env.BASE_URL}images/?`} alt="01-Sadeq-Ahmad">
+    </div>
 
-  <Timeline events={events} />
+    <div class="hadith" style="margin: 100px auto">
+        <div class="text" dir="auto">… وَ یخرُجُ دَجّالٌ مِن دِجلَةِ البَصرة و لَیسَ مِنّی وَ هُوَ مُقَدّمَةِ الدَّجّالینَ کُلُّهُم </div>
+        <div class="translation" dir="auto">
+            "… and an antichrist will emerge from the tigris of Basra and he is not from me,
+            and he is the forefront of all antichrists."
+        </div>
+        <div class="owner" dir="auto">Imam Ali ibn Abi-Talib (peace be upon him) </div>
+        <div class="reference" dir="auto">Sayyed Ibn Tawus, Malahem al-Fetan, Vol. 1, p. 122 & 123 </div>
+    </div>
+
+    <div style="flex-flow: row; width: inherit; text-align: center">
+        <img src={`${import.meta.env.BASE_URL}images/?`} alt="02-Ahmad-Scarf">
+        <img src={`${import.meta.env.BASE_URL}images/?`} alt="01-Abasadeq">
+        <img src={`${import.meta.env.BASE_URL}images/?`} alt="01-Sarkhi">
+        <img src={`${import.meta.env.BASE_URL}images/?`} alt="01-Hamami">
+    </div>
+
+    <div style="flex-flow: column; width: inherit; text-align: center; margin-top: 100px">
+        <h1>Biography of Ahmad Ismail al-Basri</h1>
+    </div>
+    <Timeline events={events} />
 </BaseLayout>
