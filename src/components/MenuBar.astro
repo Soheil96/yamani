@@ -8,6 +8,41 @@ if (validLangCodes.includes(currentLang)) {
 } else {
     currentLang = '';
 }
+
+const menuOptions = {
+    '' : {
+        'home': 'Home',
+        'origin': 'Origin and Lineage',
+        'sects': 'Yamaani Sects',
+        'ahadith': 'Ahadith',
+        'pubs': 'Ahmed\'s Publications',
+        'news': 'Ahmed on News',
+    },
+    'ar/': {
+        'home': 'الرئيسية',
+        'origin': 'الأصل والنسب',
+        'sects': 'الطوائف اليمانية',
+        'ahadith': 'الأحاديث',
+        'pubs': 'منشورات أحمد',
+        'news': 'أحمد في الأخبار',
+    },
+    'fr/': {
+        'home': 'Accueil',
+        'origin': 'Origine et lignée',
+        'sects': 'Sectes yéménites',
+        'ahadith': 'Hadiths',
+        'pubs': 'Publications d\'Ahmed',
+        'news': 'Ahmed dans les actualités',
+    },
+    'es/': {
+        'home': 'Inicio',
+        'origin': 'Origen y linaje',
+        'sects': 'Sectas yemeníes',
+        'ahadith': 'Hadices',
+        'pubs': 'Publicaciones de Ahmed',
+        'news': 'Ahmed en las noticias',
+    },
+}
 ---
 <style>
     .menu-container {
@@ -72,13 +107,13 @@ if (validLangCodes.includes(currentLang)) {
       <div class="menu-line line2"></div>
       <div class="menu-line line3"></div>
     </div>
-    <div class="menu-content">
-        <a href=`${import.meta.env.BASE_URL}${currentLang}`>Home</a>
-        <a href=`${import.meta.env.BASE_URL}${currentLang}origin`>Origin and Lineage</a>
-        <a href=`${import.meta.env.BASE_URL}${currentLang}sects`>Yamaani Sects</a>
-        <a href=`${import.meta.env.BASE_URL}${currentLang}ahadith`>Ahadith</a>
-        <a href=`${import.meta.env.BASE_URL}${currentLang}publications`>Ahmed's Publications</a>
-        <a href=`${import.meta.env.BASE_URL}${currentLang}news`>Ahmed on News</a>
+    <div class="menu-content" dir="auto">
+        <a href=`${import.meta.env.BASE_URL}${currentLang}`>{menuOptions[currentLang]['home']}</a>
+        <a href=`${import.meta.env.BASE_URL}${currentLang}origin`>{menuOptions[currentLang]['origin']}</a>
+        <a href=`${import.meta.env.BASE_URL}${currentLang}sects`>{menuOptions[currentLang]['sects']}</a>
+        <a href=`${import.meta.env.BASE_URL}${currentLang}ahadith`>{menuOptions[currentLang]['ahadith']}</a>
+        <a href=`${import.meta.env.BASE_URL}${currentLang}publications`>{menuOptions[currentLang]['pubs']}</a>
+        <a href=`${import.meta.env.BASE_URL}${currentLang}news`>{menuOptions[currentLang]['news']}</a>
     </div>
 </div>
 
