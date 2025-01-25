@@ -1,15 +1,7 @@
 ---
 import LanguageNav from '../components/LanguageNav.astro';
-import { languages } from '../assets/Languages.js';
+import MenuBar from "../components/MenuBar.astro";
 const { title } = Astro.props;
-
-let [,root, currentLang, ...currentPathParts] = Astro.url.pathname.split('/');
-const validLangCodes = languages.map((lang) => lang.code);
-if (validLangCodes.includes(currentLang)) {
-    currentLang += '/';
-} else {
-    currentLang = '';
-}
 ---
 <link rel="stylesheet" href={`${import.meta.env.BASE_URL}styles/base.css`}>
 
@@ -21,31 +13,9 @@ if (validLangCodes.includes(currentLang)) {
   </head>
   <body>
     <LanguageNav></LanguageNav>
-    <div class="menu-container">
-      <div class="menu-button">
-          <div class="menu-line line1"></div>
-          <div class="menu-line line2"></div>
-          <div class="menu-line line3"></div>
-      </div>
-      <div class="menu-content">
-          <a href=`${import.meta.env.BASE_URL}${currentLang}`>Biography</a>
-          <a href=`${import.meta.env.BASE_URL}${currentLang}origin`>Origin and Lineage</a>
-      </div>
-    </div>
+    <MenuBar></MenuBar>
 
     <slot />
-
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-          const menuContainer = document.querySelector('.menu-container');
-          const menuButton = document.querySelector('.menu-button');
-
-          menuButton?.addEventListener('click', () => {
-              menuContainer?.classList.toggle('active');
-              menuButton?.classList.toggle('active');
-          });
-      });
-    </script>
 
   </body>
 </html>

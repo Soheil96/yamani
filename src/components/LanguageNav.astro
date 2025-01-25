@@ -14,6 +14,20 @@ if (validLangCodes.includes(currentLang)) {
   }
 }
 ---
+<div class="language-switcher">
+  <div class="current-language">
+    {languages.find((lang) => lang.code === currentLang)?.label || '🇬🇧 English'}
+  </div>
+  <div class="dropdown">
+    {languages.map((lang) => (
+      <a href={`${import.meta.env.BASE_URL}${lang.path}${currentPath}`} key={lang.code}>
+        <span class="flag">{lang.label.split(' ')[0]}</span>
+        <span>{lang.label.split(' ')[1]}</span>
+      </a>
+    ))}
+  </div>
+</div>
+
 <style>
   .language-switcher {
     padding-left: 15px;
@@ -26,7 +40,7 @@ if (validLangCodes.includes(currentLang)) {
     display: none;
     position: absolute;
     top: 100%;
-    left: 5px;
+    left: 10px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -66,17 +80,3 @@ if (validLangCodes.includes(currentLang)) {
     font-weight: 600;
   }
 </style>
-
-<div class="language-switcher">
-  <div class="current-language">
-    {languages.find((lang) => lang.code === currentLang)?.label || '🇬🇧 English'}
-  </div>
-  <div class="dropdown">
-    {languages.map((lang) => (
-      <a href={`${import.meta.env.BASE_URL}${lang.path}${currentPath}`} key={lang.code}>
-        <span class="flag">{lang.label.split(' ')[0]}</span>
-        <span>{lang.label.split(' ')[1]}</span>
-      </a>
-    ))}
-  </div>
-</div>
