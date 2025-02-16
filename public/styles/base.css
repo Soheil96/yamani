@@ -1,9 +1,13 @@
 body {
     margin: 0;
-    background-color: #F0F0F0;
+    background-color: #0D1117;
     font-family: Arial, sans-serif;
+    color: white;
 }
-
+a {
+    color: red;
+    text-decoration: none;
+}
 .hadith {
   font-family: 'Georgia', serif;
   background-color: #f9f9f9;
