@@ -54,28 +54,54 @@ const events = [
 <link rel="stylesheet" href={`${import.meta.env.BASE_URL}styles/timeline.css`}>
 
 <BaseLayout title="Ahmad Ismail Biography">
-    <div style="flex-flow: column; width: inherit; text-align: center">
-        <img src={`${import.meta.env.BASE_URL}images/01-Sadeq-Ahmad.png`} alt="01-Sadeq-Ahmad" width="50%">
+    <div style="flex-flow: row; width: inherit; text-align: center; margin-top: 50px">
+        <img src={`${import.meta.env.BASE_URL}images/01-Sadeq-Ahmad.png`} alt="01-Sadeq-Ahmad" width="80%">
+        <br>
+        <img src={`${import.meta.env.BASE_URL}images/01-Yamani-Banner`} alt="01-Yamani-Banner" width="80%">
+        <br>
+        <img src={`${import.meta.env.BASE_URL}images/01-Mahdi-Dajjal`} alt="01-Mahdi-Dajjal" width="80%">
     </div>
 
-    <div class="hadith" style="margin: 100px auto">
+    <div class="hadith" style="margin: 100px auto 20px auto">
         <div class="text" dir="auto">… وَ یخرُجُ دَجّالٌ مِن دِجلَةِ البَصرة و لَیسَ مِنّی وَ هُوَ مُقَدّمَةِ الدَّجّالینَ کُلُّهُم </div>
         <div class="translation" dir="auto">
             "… and an antichrist will emerge from the tigris of Basra and he is not from me,
             and he is the forefront of all antichrists."
         </div>
         <div class="owner" dir="auto">Imam Ali ibn Abi-Talib (peace be upon him) </div>
-        <div class="reference" dir="auto">Sayyed Ibn Tawus, Malahem al-Fetan, Vol. 1, p. 122 & 123 </div>
+        <div class="reference" dir="auto">Sayyed Ibn Tawus, Malahem al-Fetan, Vol. 1, p. 122 & 123</div>
     </div>
 
-    <div style="flex-flow: row; width: inherit; text-align: center">
-        <img src={`${import.meta.env.BASE_URL}images/02-Ahmad-Scarf.png`} alt="02-Ahmad-Scarf" width="23%" style="padding: 1%">
-        <img src={`${import.meta.env.BASE_URL}images/01-Abasadeq.jpg`} alt="01-Abasadeq" width="23%" style="padding: 1%">
-        <img src={`${import.meta.env.BASE_URL}images/01-Sarkhi.jpg`} alt="01-Sarkhi" width="23%" style="padding: 1%">
-        <img src={`${import.meta.env.BASE_URL}images/01-Hamami.jpg`} alt="01-Hamami" width="23%" style="padding: 1%">
+    <div class="hadith" style="margin: auto">
+        <div class="text" dir="auto">
+            ... كَذَلِكَ غَيْبَةُ الْقَائِمِ فَإِنَّ الْأُمَّةَ سَتُنْكِرُهَا لِطُولِهَا فَمِنْ قَائِلٍ يَهْذِي بِأَنَّهُ لَمْ يُولَدْ وَ قَائِلٍ
+            يَقُولُ إِنَّه يَتَعَدَّى إِلَى ثَلَاثَةَ عَشَرَ وَ صَاعِداً وَ قَائِلٍ يَعْصِي اللَّهَ عَزَّ وَ جَلَّ بِقَوْلِهِ إِنَّ رُوحَ الْقَائِمِ يَنْطِقُ فِي هَيْكَلِ غَيْرِهِ ...
+        </div>
+        <div class="translation" dir="auto">
+            "… the absence of the Awaited One will be denied by the community due to its duration;
+            some will claim that He was never born, others will assert that He will exceed thirteen and beyond,
+            and some will disobey Allah, saying that the spirit of the Awaited One speaks through the body of another…"
+        </div>
+        <div class="reference" dir="auto">Shaikh Muhammad Sadouq, Kamal al-din, Vol. 2, p. 355</div>
+        <div class="reference" dir="auto">Allameh Muhammad Majlesi, Bihar al-Anwar, Vol. 51, p. 221</div>
+    </div>
+
+    <div class="hadith" style="margin: 20px auto 100px auto">
+        <div class="text" dir="auto">
+            ... حَتَّى يَلْتَقِيَ جُنُودُهُمَا بِقِرْقِيسِيَاءَ عَلَى النَّهْرِ وَ يَكُونُ قِتَالٌ عَظِيمٌ وَ يَسِيرُ صَاحِبُ الْمَغْرِبِ فَيَقْتُلُ الرِّجَالَ
+            وَ يَسْبِي النِّسَاءَ ثُمَّ يَرْجِعُ فِي قَيْسٍ حَتَّى يَنْزِلَ الْجَزِيرَةَ السُّفْيَانِيُّ فَيَسْبِقُ الْيَمَانِيَّ [فَيَقْتُلُ‌] وَ يَحُوزُ السُّفْيَانِيُّ مَا جَمَعُوا.
+        </div>
+        <div class="translation" dir="auto">
+            "… Until their armies meet at Qirqisiyah by the river, and there will be a great battle, and the one from
+            the West will advance, killing the men and capturing the women, then he will return to Qais until the Sufyani
+            descends, and he will precede the Yamani [and kill him], and the Sufyani will seize what they have gathered."
+        </div>
+        <div class="reference" dir="auto">Shaikh Muhammad al-Toosi, Al-Guibah (The Absence), p. 464</div>
     </div>
 
     <div style="flex-flow: column; width: inherit; text-align: center; margin-top: 100px">
+        <img src={`${import.meta.env.BASE_URL}images/02-Dajjalin`} alt="02-Dajjalin" width="80%">
+
         <h1>Biography of Ahmad Ismail al-Basri</h1>
     </div>
     <Timeline events={events} />
